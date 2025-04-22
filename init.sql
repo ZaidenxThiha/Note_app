@@ -1,4 +1,8 @@
-CREATE TABLE users (
+-- Create the noteapp database if it doesn't exist
+CREATE DATABASE IF NOT EXISTS noteapp;
+
+-- Create the users table
+CREATE TABLE IF NOT EXISTS noteapp.users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(255) UNIQUE NOT NULL,
     display_name VARCHAR(100) NOT NULL,
@@ -12,3 +16,8 @@ CREATE TABLE users (
     preferences JSON,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+-- Create or update the noteapp_user
+CREATE USER IF NOT EXISTS 'noteapp_user'@'%' IDENTIFIED WITH mysql_native_password BY 'YourStrong@Passw0rd';
+GRANT ALL PRIVILEGES ON noteapp.* TO 'noteapp_user'@'%';
+FLUSH PRIVILEGES;

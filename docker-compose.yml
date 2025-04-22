@@ -4,6 +4,7 @@ services:
     platform: linux/arm64/v8
     environment:
       - MYSQL_ROOT_PASSWORD=YourStrong@Passw0rd
+      - MYSQL_ROOT_HOST=%
       - MYSQL_DATABASE=noteapp
     ports:
       - "3306:3306"
@@ -34,6 +35,10 @@ services:
       - noteapp-network
     environment:
       - APACHE_DOCUMENT_ROOT=/var/www/html
+      - DB_HOST=mysql
+      - DB_USER=noteapp_user
+      - DB_PASS=YourStrong@Passw0rd
+      - DB_NAME=noteapp
     command: >
       bash -c "composer require cboden/ratchet phpmailer/phpmailer && php /var/www/html/websocket_server.php & apache2-foreground"
 

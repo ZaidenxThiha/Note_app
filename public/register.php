@@ -8,7 +8,7 @@ use PHPMailer\PHPMailer\Exception;
 
 // Database connection
 $db_host = 'mysql';
-$db_user = 'root';
+$db_user = 'noteapp_user';
 $db_pass = 'YourStrong@Passw0rd';
 $db_name = 'noteapp';
 
