@@ -4,7 +4,8 @@ services:
     platform: linux/arm64/v8
     environment:
       - MYSQL_ROOT_PASSWORD=YourStrong@Passw0rd
-      - MYSQL_ROOT_HOST=%
+      - MYSQL_USER=noteapp_user
+      - MYSQL_PASSWORD=YourStrong@Passw0rd
       - MYSQL_DATABASE=noteapp
     ports:
       - "3306:3306"

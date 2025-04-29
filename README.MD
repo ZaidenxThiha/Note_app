@@ -53,6 +53,7 @@ cd project
 2. Start the Application
 
 Navigate to the project directory and start the Docker containers:
+
 docker-compose up --build -d
 
 
